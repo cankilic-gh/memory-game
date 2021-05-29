@@ -1,0 +1,29 @@
+// variables
+
+$colorBackground: #FFD454;
+$colorWhite: #FFF;
+$colorText: #4F2F2F;
+
+// style
+
+html {
+    background: $colorBackground;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0rem;
+    padding: 0rem;
+    height: 100%;
+    position: relative;
+    font-family: 'Montserrat',
+    sans-serif;
+}
+
+.container {
+    display: block;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+}

@@ -1,0 +1,23 @@
+html {
+  background: #FFD454;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0rem;
+  padding: 0rem;
+  height: 100%;
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  display: block;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */
