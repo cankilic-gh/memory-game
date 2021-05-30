@@ -1,6 +1,6 @@
 // variables
 
-$colorBackground: #FFD454;
+$colorBackground: #FFF;
 $colorWhite: #FFF;
 $colorText: #4F2F2F;
 
@@ -26,4 +26,37 @@ body {
     align-items: center;
     margin: 0 auto;
     text-align: center;
+}
+
+.flip-container {
+    perspective: 1000;
+    min-height: 100px;
+    cursor: pointer;
+}
+
+.front,
+.back {
+    backface-visibility: hidden;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.back {
+    transform: rotateY(-180deg);
+    position: absolute;
+}
+
+.flip-container.flipped .back {
+    transform: rotateY(0deg);
+}
+
+.flip-container.flipped .front {
+    transform: rotateY(180deg);
+}
+
+.matched {
+    opacity: 0.3;
 }
