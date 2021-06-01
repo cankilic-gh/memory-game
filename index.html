@@ -9,12 +9,12 @@
     <title>Memory Game</title>
 </head>
 <body>
-    <br>
     <div class="container">
+        <h1>Memory Game</h1>
         <div id="app">
-            <div class="">
-                <div class="turns p-3">Turns : <span :class="finish ? 'badge-success' : 'badge-light'">{{turns}}</span></div>
-                <div class="totalTime p-3">Total Time : <span :class="finish ? 'badge-success' : 'badge-light'">{{min}} : {{sec}}</span></div>
+            <div class="score">
+                <div class="turns">Turns : <span :class="finish ? 'badge-success' : 'badge-light'">{{turns}}</span></div>
+                <div class="totalTime">Total Time : <span :class="finish ? 'badge-success' : 'badge-light'">{{min}} : {{sec}}</span></div>
             </div>
             <div class="grid-container">
                 <div v-for="card in memoryCards" class="grid-item flip-container" :class="{ 'flipped': card.isFlipped, 'matched' : card.isMatched }" @click="flipCard(card)">

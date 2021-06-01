@@ -70,28 +70,6 @@ let app = new Vue({
 
     methods: {
 
-        reset() {
-            clearInterval(this.interval);
-
-            this.cards.forEach((card) => {
-                Vue.set(card, 'isFlipped', false);
-                Vue.set(card, 'isMatched', false);
-            });
-
-            setTimeout(() => {
-                this.memoryCards = [];
-                this.memoryCards = _.shuffle(this.memoryCards.concat(_.cloneDeep(this.cards), _.cloneDeep(this.cards)));
-                this.totalTime.minutes = 0;
-                this.totalTime.seconds = 0;
-                this.start = false;
-                this.finish = false;
-                this.turns = 0;
-                this.flippedCards = [];
-
-            }, 600);
-
-        },
-
         flipCard(card) {
 
             if (card.isMatched || card.isFlipped || this.flippedCards.length === 2)
@@ -108,6 +86,8 @@ let app = new Vue({
             if (this.flippedCards.length === 2)
                 this._match(card);
         },
+
+
 
         _match(card) {
             if (this.flippedCards[0].name === this.flippedCards[1].name) {
@@ -131,6 +111,28 @@ let app = new Vue({
             }
 
             this.turns++;
+        },
+
+        reset() {
+            clearInterval(this.interval);
+
+            this.cards.forEach((card) => {
+                Vue.set(card, 'isFlipped', false);
+                Vue.set(card, 'isMatched', false);
+            });
+
+            setTimeout(() => {
+                this.memoryCards = [];
+                this.memoryCards = _.shuffle(this.memoryCards.concat(_.cloneDeep(this.cards), _.cloneDeep(this.cards)));
+                this.totalTime.minutes = 0;
+                this.totalTime.seconds = 0;
+                this.start = false;
+                this.finish = false;
+                this.turns = 0;
+                this.flippedCards = [];
+
+            }, 600);
+
         },
 
         _startGame() {
