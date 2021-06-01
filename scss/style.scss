@@ -1,7 +1,7 @@
 // variables
 
 $colorBackground: #FFF;
-$colorBtn: #00a3db;
+$colorBtn: #bd5b5b;
 $colorBtnText: #FFF;
 $colorText: #212121;
 
@@ -105,9 +105,11 @@ body {
 
     .btn {
         border-radius: 6px;
+        border:none;
         padding: 12px 30px;
         background-color: $colorBtn;
         color: $colorBtnText;
         font-size: 18px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.36);
     }
 }
