@@ -111,5 +111,9 @@ body {
         color: $colorBtnText;
         font-size: 18px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.36);
+
+        &:disabled {
+            opacity: 0.5;
+        }
     }
 }
