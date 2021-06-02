@@ -47,7 +47,7 @@ let app = new Vue({
 
         start: false,
         turns: 0,
-        totalTime: {
+        timer: {
             minutes: 0,
             seconds: 0,
         },
@@ -124,8 +124,8 @@ let app = new Vue({
             setTimeout(() => {
                 this.memoryCards = [];
                 this.memoryCards = _.shuffle(this.memoryCards.concat(_.cloneDeep(this.cards), _.cloneDeep(this.cards)));
-                this.totalTime.minutes = 0;
-                this.totalTime.seconds = 0;
+                this.timer.minutes = 0;
+                this.timer.seconds = 0;
                 this.start = false;
                 this.finish = false;
                 this.turns = 0;
@@ -142,29 +142,29 @@ let app = new Vue({
         },
 
         _tick() {
-            if (this.totalTime.seconds !== 59) {
-                this.totalTime.seconds++;
+            if (this.timer.seconds !== 59) {
+                this.timer.seconds++;
                 return
             }
 
-            this.totalTime.minutes++;
-            this.totalTime.seconds = 0;
+            this.timer.minutes++;
+            this.timer.seconds = 0;
         },
 
     },
 
     computed: {
         sec() {
-            if (this.totalTime.seconds < 10) {
-                return '0' + this.totalTime.seconds;
+            if (this.timer.seconds < 10) {
+                return '0' + this.timer.seconds;
             }
-            return this.totalTime.seconds;
+            return this.timer.seconds;
         },
         min() {
-            if (this.totalTime.minutes < 10) {
-                return '0' + this.totalTime.minutes;
+            if (this.timer.minutes < 10) {
+                return '0' + this.timer.minutes;
             }
-            return this.totalTime.minutes;
+            return this.timer.minutes;
         }
     },
 

@@ -14,7 +14,7 @@
         <div id="app">
             <div class="score">
                 <div class="turns">Turns : <span :class="finish ? 'badge-success' : 'badge-light'">{{turns}}</span></div>
-                <div class="totalTime">Total Time : <span :class="finish ? 'badge-success' : 'badge-light'">{{min}} : {{sec}}</span></div>
+                <div class="timer">Timer : <span :class="finish ? 'badge-success' : 'badge-light'">{{min}} : {{sec}}</span></div>
             </div>
             <div class="grid-container">
                 <div v-for="card in memoryCards" class="grid-item flip-container" :class="{ 'flipped': card.isFlipped, 'matched' : card.isMatched }" @click="flipCard(card)">
@@ -24,7 +24,7 @@
                     </div>
                 </div>
             </div>
-            <div class="totalTime"><button class="btn" @click="reset" :disabled="!start">Restart</button></div>
+            <div class="timer"><button class="btn" @click="reset" :disabled="!start">Restart</button></div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
